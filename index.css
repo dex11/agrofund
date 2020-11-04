@@ -1,6 +1,38 @@
-.background{
+.landing_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+ .background{
     position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+.landing{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+} 
+.input_txt{
+    margin-top: 2%;
+    border-radius: 15px;
+    font-size: large;
+    padding: 5;
+}
+.input_btn{
+    margin-top: 2%;
+    border-radius: 15px;
+    font-size: large;
+    background-color: cornsilk;
+    padding: 5;
 }
