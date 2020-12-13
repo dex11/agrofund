@@ -1,12 +1,10 @@
+//global variables that I need and are static (wont change)
 const forms = $(".landing");
-const dropDowns = $(".dropdown_option");
+const filterOptions = $(".dropdown");
 
+//registration part
 if (forms.length > 0) {
     forms[0].addEventListener("submit", signIn);
-}
-
-for (let i = 0; i < dropDowns.length; i++) {
-    dropDowns[i].addEventListener("click", dropDownSelect);
 }
 
 function register() {
@@ -21,9 +19,14 @@ function signIn(e) {
     }
 }
 
-function dropDownSelect(e) {
-    let b = $(this).closest("button");
-    b.innerText = "wdwdw";
-    console.log(b.innerHTML);
-    // e.target.closest("#dropbtn").innerHTML = e.target.innerHTML;
+
+
+//landing page part
+for(let i = 0; i < filterOptions.length; i++){
+    let option = filterOptions[i];
+    let parentButton = option.closest("div").children[0];
+    option.addEventListener("click", (e) =>{
+        let v = e.target.innerHTML;
+        parentButton.innerHTML = v;
+    });
 }
