@@ -39,6 +39,11 @@
     justify-content: space-between;
 }
 
+.upper_row > *{
+    flex:1;
+    border-right: 0.1vh solid lightgray;
+}
+
 .dropdown {
     float: left;
     overflow: hidden;
@@ -46,6 +51,7 @@
 
 .dropdown .dropbtn {
     cursor: pointer;
+    width: 100%;
     font-size: 16px;
     border: none;
     outline: none;
@@ -94,7 +100,7 @@
     width: min-content;
     display: flex;
     align-items: center;
-    margin-right: 14px;
+    margin-left: 14px;
 }
 .project_dates > input{
     margin-left: 1vw;
