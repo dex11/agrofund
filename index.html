@@ -1,0 +1,21 @@
+<html>
+<link rel="stylesheet" href="index.css">
+<head>
+</head>
+<body class="landing_main">
+    <img src="./img/agr.jpg" class="background" />
+    <div class="landing">
+        <input type="email" id ="email" placeholder="email" class="input_txt" />
+        <input type="password" id="password" placeholder="password" class="input_txt" />
+        <button class="input_btn" id="signIn1" onclick="logIn(event)">Sign In</button>
+        <button class="input_btn" id="register" onclick="window.location.href='registration.html'">Sign Up</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="./firebase.js"></script>
+</body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</html>

@@ -35,8 +35,8 @@
 
 .bottom_row{
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .upper_row > *{
@@ -109,8 +109,42 @@
 
 .bottom_row > input{
     height: 3vh;
+    width: 15%;
 }
 
 .filter_button{
-    margin-right: 14px;
+    align-self: stretch;
+    margin: 1vh 14px 1vh 3%;
+}
+
+.bottom_row__inputs{
+    display: flex;
+    flex-direction: row;
+    margin: 0 3% 0  3%;
+    width: 75%;
+}
+
+.bottom_row__inputs > input{
+}
+/* not responsive filter tab */
+
+@media only screen and (max-width: 750px) {
+
+    .bottom_row__inputs{
+        display: flex;
+        flex-direction: column;
+        margin: 0 3% 0 3%;
+        width: 65%;
+    }
+}
+
+/* listing */
+.listing_view{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    margin: 0.5% 10% 0 10%;
+    background-color: white;
+    border-radius: 10px;
 }

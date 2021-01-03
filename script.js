@@ -1,26 +1,6 @@
 //global variables that I need and are static (wont change)
-const forms = $(".landing");
-const filterOptions = $(".dropdown");
-
-//registration part
-if (forms.length > 0) {
-    forms[0].addEventListener("submit", signIn);
-}
-
-function register() {
-    console.log("Wtf");
-    window.location = "registration.html";
-}
-
-function signIn(e) {
-    const inputs = $(".input_txt");
-    for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].value.length == 0) e.preventDefault();
-    }
-}
-
-
-
+const filterOptions = document.getElementsByClassName("dropdown");
+const listingContainer = document.getElementById('listing');
 //landing page part
 for(let i = 0; i < filterOptions.length; i++){
     let option = filterOptions[i];
@@ -29,4 +9,45 @@ for(let i = 0; i < filterOptions.length; i++){
         let v = e.target.innerHTML;
         parentButton.innerHTML = v;
     });
+}
+
+//listing 
+const data = [
+    {
+        id: '001',
+        product: 'ხორბალი',
+        veriety: 'ჯიშიანი',
+        region: 'კახეთი',
+        status: 'ახალი',
+        start: '01/01/2021',
+        finish: '02/02/2021',
+        score: '32',
+    },
+    {
+        id: '002',
+        product: 'მზესუმზირა',
+        veriety: 'უჯიშო',
+        region: 'ქართლი',
+        status: 'მალე სრულდება',
+        start: '02/01/2021',
+        finish: '02/02/2021',
+        score: '52',
+    },
+    {
+        id: '003',
+        product: 'ხორბალი',
+        veriety: 'ჯიშიანი',
+        region: 'ქართლი',
+        status: 'დასრულებული',
+        start: '05/01/2021',
+        finish: '02/02/2021',
+        score: '22',
+    }
+];
+
+function initialRender(){
+    for(let i = 0; i < data.length; i++){
+        let lot = data[i];
+        
+    }
 }

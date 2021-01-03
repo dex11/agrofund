@@ -1,7 +1,7 @@
 <html>
 <link rel="stylesheet" href="landingpage.css">
-
-<body class="main">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body class="main" onload="initialRender()">
     <img src="./img/agr.jpg" class="background" />
     <div class="header">
         <div class="upper_row">
@@ -25,8 +25,7 @@
                 <button class="dropbtn">რეგიონი</button>
                 <div class="dropdown-content">
                     <a class="dropdown_option">ქართლი</a>
-                    <a class="dropdown_option">ისა</a>
-                    <a class="dropdown_option">ესა</a>
+                    <a class="dropdown_option">კახეთი</a>
                 </div>
             </div>
 
@@ -34,7 +33,7 @@
                 <button class="dropbtn">სტატუსი</button>
                 <div class="dropdown-content">
                     <a class="dropdown_option">ახალი</a>
-                    <a class="dropdown_option">სკორა ზაკანჩივაეტსა</a>
+                    <a class="dropdown_option">მალე სრულდება</a>
                     <a class="dropdown_option">დასრულებული</a>
                 </div>
             </div>
@@ -44,15 +43,19 @@
         <div class="bottom_row">
             <div class="project_dates">
                 <p>ვადები</p>
-                <input type="date" />
-                <input type="date" />
+                <div class="bottom_row__inputs">
+                    <input type="date" />
+                    <input type="date" />
+                </div>
             </div>
             <input class="score" type="number" placeholder="ქულა" />
-            <input type="search" placeholder="მიუთითეთ კოდი" />
+            <input type="search" placeholder="კოდი" />
             <button class="filter_button">გაფილტვრა</button>
         </div>
     </div>
-    <h1>ოხ ეს ქალები.... v2</h1>
+    <div class="listing_view" id="listing">
+
+    </div>
 </body>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="./script.js" type="text/javascript"></script>
