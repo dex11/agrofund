@@ -25,6 +25,8 @@ const data = [
         start: '01/01/2021',
         finish: '02/02/2021',
         score: '32',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '002',
@@ -35,6 +37,8 @@ const data = [
         start: '02/01/2021',
         finish: '02/03/2021',
         score: '52',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '003',
@@ -45,6 +49,8 @@ const data = [
         start: '05/01/2021',
         finish: '02/11/2021',
         score: '22',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '004',
@@ -55,6 +61,8 @@ const data = [
         start: '05/01/2021',
         finish: '02/10/2021',
         score: '12',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '005',
@@ -65,6 +73,8 @@ const data = [
         start: '05/01/2021',
         finish: '02/09/2021',
         score: '22',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '006',
@@ -75,6 +85,8 @@ const data = [
         start: '05/01/2021',
         finish: '02/08/2021',
         score: '32',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '007',
@@ -85,6 +97,8 @@ const data = [
         start: '05/01/2021',
         finish: '02/07/2021',
         score: '42',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '008',
@@ -95,6 +109,8 @@ const data = [
         start: '05/01/2021',
         finish: '02/06/2021',
         score: '27',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '009',
@@ -105,6 +121,8 @@ const data = [
         start: '05/01/2021',
         finish: '02/05/2021',
         score: '65',
+        goal: 15000,
+        raised: 4500,
     },
     {
         id: '010',
@@ -115,12 +133,24 @@ const data = [
         start: '05/01/2021',
         finish: '02/04/2021',
         score: '05',
+        goal: 15000,
+        raised: 4500,
     },
 ];
 
 function initialRender(){
+    let curPageStr = document.URL.split('=');
+    if(curPageStr.length == 1) curPage = 0;
+    else curPage = parseInt(curPageStr[1]);
+    console.log(curPage);
+    let nextButton = document.getElementById("next_page_button");
+    let prevButton = document.getElementById("prev_page_button");
+    if(curPage*5 + 1 < 6) prevButton.disabled = true;
     let container = document.getElementById("listing");
-    for(let i = curPage; i < 5; i++){
+    let begin = curPage * 5;
+    console.log(begin);
+    for(let i = begin; i < begin + 5; i++){
+        if(i >= data.length) break;
         let lot = data[i];
         let logoPath = "";
         if(lot.product === "ხორბალი") logoPath = "./img/wheat.jpg";
@@ -134,11 +164,13 @@ function initialRender(){
                         "<p> კულტურა: " + lot.product  + "</p>" +
                         "<p> ჯიში: " + lot.veriety  + "</p>" +
                         "<p> რეგიონი: " + lot.region  + "</p>" +
+                        "<p> ვადები: " + lot.start + "  " + lot.finish  + "</p>" +
                     "</div>" +
 
                     "<div>" +
-                        "<p> ვადები: " + lot.start + "  " + lot.finish  + "</p>" +
                         "<p> ქულა: " + lot.score  + "</p>" +
+                        "<p> მიზანი: " + lot.goal  + "₾</p>" +
+                        "<p> მოგროვებულია: " + lot.raised  + "₾</p>" +
                         "<p> კოდი: " + lot.id  + "</p>" +
                     "</div>" +
                 "</div>" +
@@ -146,9 +178,18 @@ function initialRender(){
                 "<button class='listing_button' onclick='lotDetailed()' > დეტალები </button>"+
             "</div>";
     }
-    document.getElementsByClassName("background")[0].style.height = "100%";
+    curPage++;
+    if(curPage*5 >= data.length) nextButton.disabled = true;
 }
 
 function lotDetailed(){
-    console.log("WTF");
+}
+
+function nextPage(){
+    window.location.href = './landingpage.html?page=' + curPage;
+}
+
+function prevPage(){
+    curPage-=2;
+    window.location.href = './landingpage.html?page=' + curPage;
 }
