@@ -110,9 +110,11 @@
 .bottom_row > input{
     height: 3vh;
     width: 15%;
+    margin-right: 1%;
 }
 
 .filter_button{
+    cursor: pointer;
     align-self: stretch;
     margin: 1vh 14px 1vh 3%;
 }
@@ -123,6 +125,8 @@
     margin: 0 3% 0  3%;
     width: 75%;
 }
+
+
 
 .bottom_row__inputs > input{
 }

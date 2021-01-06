@@ -1,0 +1,55 @@
+<html>
+<link rel="stylesheet" href="landingpage.css">
+<link rel="stylesheet" href="admin.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body class="main" >
+    <img src="./img/agr.jpg" class="background" />
+    <div class="header">
+        <div class="upper_row">
+            <div class="dropdown">
+                <button class="dropbtn">კულტურა</button>
+                <div class="dropdown-content">
+                    <a class="dropdown_option">ხორბალი</a>
+                    <a class="dropdown_option">მზესუმზირა</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">ჯიში</button>
+                <div class="dropdown-content">
+                    <a class="dropdown_option">ჯიშიანი</a>
+                    <a class="dropdown_option">უჯიშო</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">რეგიონი</button>
+                <div class="dropdown-content">
+                    <a class="dropdown_option">ქართლი</a>
+                    <a class="dropdown_option">კახეთი</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom_row">
+            <div class="project_dates">
+                <p>ვადები</p>
+                <div class="bottom_row__inputs">
+                    <input type="date" id="startDateInpt"/>
+                    <input type="date" id="endDateInpt"/>
+                </div>
+            </div>
+            <input class="score" id="scoreInpt" type="number" placeholder="ქულა" />
+            <input class="score" id="goalInpt" type="number" placeholder="სამიზნე თანხა" />
+            <input class="score" id="googleMapsInpt" type="url" placeholder="Google map-ის ლინკი" />
+        </div>
+
+        <div class="bottom_row">
+        </div>
+    </div>
+    <button class="add_new_lot_button" onclick="addNewLot()">დამატება</button>
+</body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="./script.js" type="text/javascript"></script>
+<script src="./adminPanel.js" type="text/javascript"></script>
+</html>

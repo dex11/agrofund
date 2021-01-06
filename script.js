@@ -5,13 +5,15 @@ const filterOptions = document.getElementsByClassName("dropdown");
 const listingContainer = document.getElementById('listing');
 let curPage = 0;
 //landing page part
-for(let i = 0; i < filterOptions.length; i++){
-    let option = filterOptions[i];
-    let parentButton = option.closest("div").children[0];
-    option.addEventListener("click", (e) =>{
-        let v = e.target.innerHTML;
-        parentButton.innerHTML = v;
-    });
+if(filterOptions != null){
+    for(let i = 0; i < filterOptions.length; i++){
+        let option = filterOptions[i];
+        let parentButton = option.closest("div").children[0];
+        option.addEventListener("click", (e) =>{
+            let v = e.target.innerHTML;
+            parentButton.innerHTML = v;
+        });
+    }
 }
 
 //listing 
@@ -27,6 +29,7 @@ const data = [
         score: '32',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '002',
@@ -39,6 +42,7 @@ const data = [
         score: '52',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '003',
@@ -51,6 +55,7 @@ const data = [
         score: '22',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '004',
@@ -63,6 +68,7 @@ const data = [
         score: '12',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '005',
@@ -75,6 +81,7 @@ const data = [
         score: '22',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '006',
@@ -87,6 +94,7 @@ const data = [
         score: '32',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '007',
@@ -99,6 +107,7 @@ const data = [
         score: '42',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '008',
@@ -111,6 +120,7 @@ const data = [
         score: '27',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '009',
@@ -123,6 +133,7 @@ const data = [
         score: '65',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
     {
         id: '010',
@@ -135,6 +146,7 @@ const data = [
         score: '05',
         goal: 15000,
         raised: 4500,
+        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
     },
 ];
 
@@ -182,7 +194,8 @@ function initialRender(){
     if(curPage*5 >= data.length) nextButton.disabled = true;
 }
 
-function lotDetailed(){
+function lotDetailed(newLot){
+    console.log(newLot)
 }
 
 function nextPage(){

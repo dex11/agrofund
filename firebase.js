@@ -16,7 +16,8 @@ function logIn(e){
     const password = document.getElementById("password").value;
     auth.signInWithEmailAndPassword(email, password)
     .then((user) => {
-        window.location.href="landingpage.html";
+        if(email === "admin@gmail.com") window.location.href="adminPanel.html"
+        else window.location.href="landingpage.html";
     })
     .catch((error) => {
         var errorCode = error.code;
