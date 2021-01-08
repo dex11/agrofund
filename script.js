@@ -187,15 +187,16 @@ function initialRender(){
                     "</div>" +
                 "</div>" +
                 
-                "<button class='listing_button' onclick='lotDetailed()' > დეტალები </button>"+
+                "<button class='listing_button' id='button_"+ i + "' onclick='lotDetailed(event)' > დეტალები </button>"+
             "</div>";
     }
     curPage++;
     if(curPage*5 >= data.length) nextButton.disabled = true;
 }
 
-function lotDetailed(newLot){
-    console.log(newLot)
+function lotDetailed(e){
+    let index = e.target.id.split('_')[1];
+    window.location.href="lotDetail.html?obj=" + index;
 }
 
 function nextPage(){

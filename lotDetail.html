@@ -1,0 +1,50 @@
+<html>
+<link rel="stylesheet" href="landingpage.css">
+<link rel="stylesheet" href="lotDetail.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body class="main" onload="initializePage()">
+    <img src="./img/agr.jpg" class="background" />
+    <div>
+        <div class='lot_container' >
+            <img class='lot_img'  src=''/>
+            <div class='lot_desc' >
+                <div>
+                    <p> კულტურა: lot.product </p>
+                    <p> ჯიში: lot.veriety</p>
+                    <p> რეგიონი: lot.region </p>
+                    <p> ვადები: </p>
+                </div>
+
+                <div>
+                    <p> ქულა: lot.score</p>
+                    <p> კოდი: 23</p>
+                </div>
+            </div>
+        </div>
+        <div class='lot_container'>
+            <p id="curCash"></p>
+            <p id="goalCash"></p>
+            <progress id="file" value="4500" max="15000"> 32% </progress>
+            <button id ="investBtn" onclick="invest()">ინვესტირება</button>
+        </div>
+    </div>
+
+    <div id="popUp" class="pop_up_container">
+        <div class="pop_up">
+            <span class="close" onclick="closeInvestPopUp()">&times;</span>
+            <div class="payment_method_container">
+                <p>ანგარიშის ნომერი</p>
+                <input type='tel' class="card_inpt" id="cardNum" placeholder="შეიყვანეთ ვალიდური ნომერი"/>
+                <div class="exp_CVC">
+                    <input type='tel' class="card_inpt" id="cardExp" placeholder="MM/YY"/>
+                    <input type='tel' class="card_inpt" id="cardCVC" placeholder="CVC"/>
+                </div>
+                <input type="number" class="card_inpt" id="cardExp" placeholder="თანხა"/>
+                <button id="payBtn">გადახდა</button>
+            </div>
+        </div>
+      
+      </div>
+</body>
+<script src="./lotDetail.js" type="text/javascript"></script>
+</html>
