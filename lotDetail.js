@@ -26,3 +26,23 @@ function invest(){
 function closeInvestPopUp(){
     modal.style.display = "none";
 }
+
+function onCardNumberChange(e){
+    let cardNum = e.target;
+    if(!isFinite(cardNum.value[cardNum.value.length - 1]) || cardNum.value.length > 18){
+        alert("შეიყვანე ვალიდური ანგარიშის ნომერი");
+        cardNum.value = "";
+    }else if(cardNum.value.length == 4 || cardNum.value.length== 9){
+        cardNum.value+=" ";
+    }
+}
+
+function onCardExpChange(e){
+    let cardExp = e.target;
+    if(!isFinite(cardExp.value[cardExp.value.length - 1]) || cardExp.value.length > 5){
+        alert("შეიყვანე ვალიდური ანგარიშის ნომერი");
+        cardExp.value = "";
+    }else if(cardExp.value.length == 2){
+        cardExp.value+="/";
+    }
+}

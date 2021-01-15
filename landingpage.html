@@ -44,13 +44,13 @@
             <div class="project_dates">
                 <p>ვადები</p>
                 <div class="bottom_row__inputs">
-                    <input type="date" />
-                    <input type="date" />
+                    <input id="startDateInpt" type="date" required/>
+                    <input id="endDateInpt" type="date" required/>
                 </div>
             </div>
-            <input class="score" type="number" placeholder="ქულა" />
-            <input type="search" placeholder="კოდი" />
-            <button class="filter_button">გაფილტვრა</button>
+            <input id="scoreInpt" class="score" type="number" placeholder="ქულა" required/>
+            <input type="search" id="codeInpt" placeholder="კოდი" required/>
+            <button class="filter_button" onclick="onFilter()">გაფილტვრა</button>
         </div>
     </div>
     <div class="listing_view" id="listing">

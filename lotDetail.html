@@ -34,10 +34,10 @@
             <span class="close" onclick="closeInvestPopUp()">&times;</span>
             <div class="payment_method_container">
                 <p>ანგარიშის ნომერი</p>
-                <input type='tel' class="card_inpt" id="cardNum" placeholder="შეიყვანეთ ვალიდური ნომერი"/>
+                <input type="text" class="card_inpt" id="cardNum" placeholder="შეიყვანეთ ვალიდური ნომერი" onkeyup="onCardNumberChange(event)"/>
                 <div class="exp_CVC">
-                    <input type='tel' class="card_inpt" id="cardExp" placeholder="MM/YY"/>
-                    <input type='tel' class="card_inpt" id="cardCVC" placeholder="CVC"/>
+                    <input type='text' class="card_inpt" id="cardExp" placeholder="MM/YY" onkeyup="onCardExpChange(event)"/>
+                    <input type='number' class="card_inpt" id="cardCVC" placeholder="CVC"/>
                 </div>
                 <input type="number" class="card_inpt" id="cardExp" placeholder="თანხა"/>
                 <button id="payBtn">გადახდა</button>

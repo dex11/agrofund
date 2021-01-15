@@ -4,6 +4,7 @@
 const filterOptions = document.getElementsByClassName("dropdown");
 const listingContainer = document.getElementById('listing');
 let curPage = 0;
+let filterD = "";
 //landing page part
 if(filterOptions != null){
     for(let i = 0; i < filterOptions.length; i++){
@@ -200,10 +201,54 @@ function lotDetailed(e){
 }
 
 function nextPage(){
-    window.location.href = './landingpage.html?page=' + curPage;
+    window.location.href = './landingpage.html?page=' + curPage + filterD;
 }
 
 function prevPage(){
     curPage-=2;
-    window.location.href = './landingpage.html?page=' + curPage;
+    window.location.href = './landingpage.html?page=' + curPage + filterD;
+}
+
+function onFilter(){
+    const inputs = document.getElementsByTagName("input");
+    let filterOptions = document.getElementsByClassName("dropbtn");
+    const startDateO = document.getElementById("startDateInpt").value;
+    const endDateO = document.getElementById("endDateInpt").value;
+    const score = document.getElementById("scoreInpt").value;
+    const code = document.getElementById("codeInpt").value;
+    let filterDet = isReady(inputs, filterOptions, startDateO, endDateO, score, code);
+    if(filterDet.length == 0){
+        alert("ფილტრაცია შეუძლებელია!");
+        return;
+    }else{
+        window.location.href = './landingpage.html?page=' + (curPage - 1) + filterDet;
+    }
+}
+
+function isReady(inputs, filterOptions, startDateO, endDateO, score, code){
+    let filterDetail = "";
+    if(startDateO.length > 0){
+        filterDetail+="&startDate=" + startDateO;
+    }
+    if(endDateO.length > 0){
+        filterDetail+="&endDate=" + endDateO;
+    }
+    const blackList = ["კულტურა", "ჯიში", "რეგიონი",'სტატუსი'];
+    for(let i = 0; i < filterOptions.length; i++){
+        if(!blackList.includes(filterOptions[i].innerHTML)){
+            filterDetail+="&inp" + i + "=" + filterOptions[i].innerHTML;
+        }
+    }
+    const startDate = Date.parse(startDateO);
+    const endDate = Date.parse(endDateO);
+    if(startDate > endDate){
+        return "";
+    }
+    if(parseInt(score) >= 0){
+        filterDetail+= "&score=" + score;
+    } 
+    if(parseInt(code) >= 0){
+        filterDetail+= "&code=" + code;
+    }
+    return filterDetail;
 }

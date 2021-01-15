@@ -36,3 +36,7 @@
     background-color: cornsilk;
     padding: 5;
 }
+
+button{
+    cursor: pointer;
+}
