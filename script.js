@@ -152,10 +152,8 @@ const data = [
 ];
 
 function initialRender(){
-    let curPageStr = document.URL.split('=');
-    if(curPageStr.length == 1) curPage = 0;
-    else curPage = parseInt(curPageStr[1]);
-    console.log(curPage);
+    curPage = 0;
+    parseURL();
     let nextButton = document.getElementById("next_page_button");
     let prevButton = document.getElementById("prev_page_button");
     if(curPage*5 + 1 < 6) prevButton.disabled = true;
@@ -195,6 +193,21 @@ function initialRender(){
     if(curPage*5 >= data.length) nextButton.disabled = true;
 }
 
+function parseURL(){
+    console.log( document.URL);
+    let atributesString = document.URL.split("?");
+    if(atributesString.length != 1){
+        let atributes = atributesString[1].split("&");
+        curPage = atributes[0].split("=")[1];
+        let segment = "";
+        for(let i = 1; i < atributes.length; i++){
+            segment = atributes[i];
+            let keyValue = segment.split("=");
+            console.log(keyValue[0] + " " + keyValue[1]);
+        }
+    }
+}
+
 function lotDetailed(e){
     let index = e.target.id.split('_')[1];
     window.location.href="lotDetail.html?obj=" + index;
@@ -227,16 +240,20 @@ function onFilter(){
 
 function isReady(inputs, filterOptions, startDateO, endDateO, score, code){
     let filterDetail = "";
+    let anythingelse = false;
     if(startDateO.length > 0){
         filterDetail+="&startDate=" + startDateO;
+        anythingelse= true;
     }
     if(endDateO.length > 0){
         filterDetail+="&endDate=" + endDateO;
+        anythingelse= true;
     }
     const blackList = ["კულტურა", "ჯიში", "რეგიონი",'სტატუსი'];
     for(let i = 0; i < filterOptions.length; i++){
         if(!blackList.includes(filterOptions[i].innerHTML)){
             filterDetail+="&inp" + i + "=" + filterOptions[i].innerHTML;
+            anythingelse= true;
         }
     }
     const startDate = Date.parse(startDateO);
@@ -246,9 +263,13 @@ function isReady(inputs, filterOptions, startDateO, endDateO, score, code){
     }
     if(parseInt(score) >= 0){
         filterDetail+= "&score=" + score;
+        anythingelse= true;
     } 
     if(parseInt(code) >= 0){
-        filterDetail+= "&code=" + code;
+        filterDetail = "&code=" + code;
+        if(anythingelse){
+            alert("კოდი არის უნიკალური, შესაბამისად სხვა ფილტრაციის ვარიანტები უგულებელყოფილი იქნება");
+        }
     }
     return filterDetail;
 }
