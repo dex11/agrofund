@@ -1,6 +1,20 @@
 
+const filterOptions = document.getElementsByClassName("dropdown");
+const listingContainer = document.getElementById('listing');
+//landing page part
+if(filterOptions != null){
+    for(let i = 0; i < filterOptions.length; i++){
+        let option = filterOptions[i];
+        let parentButton = option.closest("div").children[0];
+        option.addEventListener("click", (e) =>{
+            let v = e.target.innerHTML;
+            parentButton.innerHTML = v;
+        });
+    }
+}
 
-function addNewLot(){
+
+function moveToNewLot(){
     window.location.href="./newLot.html"
 }
 
@@ -34,7 +48,7 @@ function addNewLot(){
     option = filterOptions[2].innerHTML;
     newLot.region = option;
 
-    newLot.id = data.length;
+    newLot.id = 3123123141;//პირობითად
     newLot.start = startDateO;
     newLot.finish = endDateO;
     
@@ -42,7 +56,7 @@ function addNewLot(){
     newLot.goal = goal;
     option = document.getElementById("googleMapsInpt").value;
     newLot.location = option;
-    lotDetailed(newLot);
+    addNewLotInDatabase(newLot);
 }
 
 function isReady(inputs, filterOptions, startDateO, endDateO, score, goal){
