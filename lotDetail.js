@@ -25,8 +25,8 @@ function initializePage(){
     lot.goal = document.URL.split("goal=")[1].split("&")[0];
     lot.raised = document.URL.split("raised=")[1].split("&")[0];
     let progress = document.getElementById("progress");
-    progress.value = parseInt(lot.raised);
-    progress.max =  parseInt(lot.goal);
+    progress.value = parseFloat(lot.raised);
+    progress.max =  parseFloat(lot.goal);
     lot.location = document.URL.split("location=")[1].split("&")[0];
     secodRowEls[2].href = lot.location;
     lot.start = document.URL.split("start=")[1].split("&")[0];
@@ -78,6 +78,34 @@ function onCardExpChange(e){
         cardExp.value = "";
     }else if(cardExp.value.length == 2){
         cardExp.value+="/";
+    }
+}
+
+function onPay(e){
+    let amount = document.getElementById("cashAmount").value;
+    amount = parseFloat(amount);
+    let goal = parseFloat(lot.goal) - parseFloat(lot.raised);
+    if(amount <= goal && amount > 0){
+
+        let newVal =  parseFloat(lot.raised) + amount;
+        // Set the "capital" field of the city 'DC'
+        return db.collection("lots").where("id", "==", parseInt(lot.id)).get()
+        .then(function(querySnapshot) {
+            return querySnapshot.docs[0].update({
+                raised: newVal
+            }).then(function() {
+                console.log("Document successfully updated!");
+                let progress = document.getElementById("progress");
+                progress.value = amount;
+                alert("გადახდა წარმატებით შესრულდა");
+                modal.style.display = "none";
+            })
+            .catch(function(error) {
+                console.error("Error updating document: ", error);
+            });
+        });
+    }else{
+        alert("მითითებული თანხა არ აკმაყოფილებს შესატან ფარგლებს");
     }
 }
 

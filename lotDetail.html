@@ -40,12 +40,18 @@
                     <input type='text' class="card_inpt" id="cardExp" placeholder="MM/YY" onkeyup="onCardExpChange(event)"/>
                     <input type='number' class="card_inpt" id="cardCVC" placeholder="CVC"/>
                 </div>
-                <input type="number" class="card_inpt" id="cardExp" placeholder="თანხა"/>
-                <button id="payBtn">გადახდა</button>
+                <input type="number" class="card_inpt" id="cashAmount" placeholder="თანხა"/>
+                <button id="payBtn" onclick="onPay()">გადახდა</button>
             </div>
         </div>
       
       </div>
 </body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+<script src="./firebase.js" type="text/javascript"></script>
 <script src="./lotDetail.js" type="text/javascript"></script>
 </html>
