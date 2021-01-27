@@ -18,140 +18,141 @@ if(filterOptions != null){
 }
 
 //listing 
-const data = [
-    {
-        id: '001',
-        product: 'ხორბალი',
-        veriety: 'ჯიშიანი',
-        region: 'კახეთი',
-        status: false,
-        start: '01/01/2021',
-        finish: '02/02/2021',
-        score: '32',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '002',
-        product: 'მზესუმზირა',
-        veriety: 'უჯიშო',
-        region: 'ქართლი',
-        status: true,
-        start: '02/01/2021',
-        finish: '02/03/2021',
-        score: '52',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '003',
-        product: 'ხორბალი',
-        veriety: 'ჯიშიანი',
-        region: 'ქართლი',
-        status: true,
-        start: '05/01/2021',
-        finish: '02/11/2021',
-        score: '22',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '004',
-        product: 'ხორბალი',
-        veriety: 'ჯიშიანი',
-        region: 'ქართლი',
-        status: true,
-        start: '05/01/2021',
-        finish: '02/10/2021',
-        score: '12',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '005',
-        product: 'მზესუმზირა',
-        veriety: 'ჯიშიანი',
-        region: 'ქართლი',
-        status: true,
-        start: '05/01/2021',
-        finish: '02/09/2021',
-        score: '22',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '006',
-        product: 'ხორბალი',
-        veriety: 'უჯიშო',
-        region: 'ქართლი',
-        status: true,
-        start: '05/01/2021',
-        finish: '02/08/2021',
-        score: '32',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '007',
-        product: 'მზესუმზირა',
-        veriety: 'ჯიშიანი',
-        region: 'კახეთი',
-        status: true,
-        start: '05/01/2021',
-        finish: '02/07/2021',
-        score: '42',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '008',
-        product: 'ხორბალი',
-        veriety: 'ჯიშიანი',
-        region: 'ქართლი',
-        status: true,
-        start: '05/01/2021',
-        finish: '02/06/2021',
-        score: '27',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '009',
-        product: 'მზესუმზირა',
-        veriety: 'უჯიშო',
-        region: 'კახეთი',
-        status: true,
-        start: '05/01/2021',
-        finish: '02/05/2021',
-        score: '65',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-    {
-        id: '010',
-        product: 'ხორბალი',
-        veriety: 'უჯიშო',
-        region: 'ქართლი',
-        status: true,
-        start: '05/01/2021',
-        finish: '02/04/2021',
-        score: '05',
-        goal: 15000,
-        raised: 4500,
-        location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-    },
-];
+// const data = [
+//     {
+//         id: '001',
+//         product: 'ხორბალი',
+//         veriety: 'ჯიშიანი',
+//         region: 'კახეთი',
+//         status: false,
+//         start: '01/01/2021',
+//         finish: '02/02/2021',
+//         score: '32',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '002',
+//         product: 'მზესუმზირა',
+//         veriety: 'უჯიშო',
+//         region: 'ქართლი',
+//         status: true,
+//         start: '02/01/2021',
+//         finish: '02/03/2021',
+//         score: '52',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '003',
+//         product: 'ხორბალი',
+//         veriety: 'ჯიშიანი',
+//         region: 'ქართლი',
+//         status: true,
+//         start: '05/01/2021',
+//         finish: '02/11/2021',
+//         score: '22',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '004',
+//         product: 'ხორბალი',
+//         veriety: 'ჯიშიანი',
+//         region: 'ქართლი',
+//         status: true,
+//         start: '05/01/2021',
+//         finish: '02/10/2021',
+//         score: '12',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '005',
+//         product: 'მზესუმზირა',
+//         veriety: 'ჯიშიანი',
+//         region: 'ქართლი',
+//         status: true,
+//         start: '05/01/2021',
+//         finish: '02/09/2021',
+//         score: '22',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '006',
+//         product: 'ხორბალი',
+//         veriety: 'უჯიშო',
+//         region: 'ქართლი',
+//         status: true,
+//         start: '05/01/2021',
+//         finish: '02/08/2021',
+//         score: '32',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '007',
+//         product: 'მზესუმზირა',
+//         veriety: 'ჯიშიანი',
+//         region: 'კახეთი',
+//         status: true,
+//         start: '05/01/2021',
+//         finish: '02/07/2021',
+//         score: '42',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '008',
+//         product: 'ხორბალი',
+//         veriety: 'ჯიშიანი',
+//         region: 'ქართლი',
+//         status: true,
+//         start: '05/01/2021',
+//         finish: '02/06/2021',
+//         score: '27',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '009',
+//         product: 'მზესუმზირა',
+//         veriety: 'უჯიშო',
+//         region: 'კახეთი',
+//         status: true,
+//         start: '05/01/2021',
+//         finish: '02/05/2021',
+//         score: '65',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+//     {
+//         id: '010',
+//         product: 'ხორბალი',
+//         veriety: 'უჯიშო',
+//         region: 'ქართლი',
+//         status: true,
+//         start: '05/01/2021',
+//         finish: '02/04/2021',
+//         score: '05',
+//         goal: 15000,
+//         raised: 4500,
+//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
+//     },
+// ];
 
 function initialRender(){
+    data = [];
     curPage = 0;
     parseURL();
     if(curPage == 0){
@@ -159,14 +160,16 @@ function initialRender(){
         window.localStorage.setItem("nextList", null);
     }
     getData();
-    let nextButton = document.getElementById("next_page_button");
+}
+
+function displayLots(){
+    console.log(data);
     let prevButton = document.getElementById("prev_page_button");
     if(curPage*5 + 1 < 6) prevButton.disabled = true;
     let container = document.getElementById("listing");
     let begin = curPage * 5;
     console.log(begin);
-    for(let i = begin; i < begin + 5; i++){
-        if(i >= data.length) break;
+    for(let i = 0; i < data.length; i++){
         let lot = data[i];
         let logoPath = "";
         if(lot.product === "ხორბალი") logoPath = "./img/wheat.jpg";
@@ -195,11 +198,13 @@ function initialRender(){
             "</div>";
     }
     curPage++;
-    if(curPage*5 >= data.length) nextButton.disabled = true;
+    // if(data.length == 0){
+    //     alert("ლოტების რაოდენობა ამოიწურა");
+    //     nextButton.disabled = true;
+    // } 
 }
 
 function parseURL(){
-    console.log( document.URL);
     let atributesString = document.URL.split("?");
     if(atributesString.length != 1){
         let atributes = atributesString[1].split("&");
@@ -215,7 +220,13 @@ function parseURL(){
 
 function lotDetailed(e){
     let index = e.target.id.split('_')[1];
-    window.location.href="lotDetail.html?obj=" + index;
+    let lot = data[index];
+    window.location.href="lotDetail.html?id=" + lot.id +
+    "&raised=" + lot.raised + "&goal=" + lot.goal + "&location="
+    +lot.location + "&product=" + lot.product + "&veriety="
+    +lot.veriety + "&region=" + lot.region + "&start="+
+    lot.start + "&finish=" + lot.finish + "&score=" + lot.score 
+    + "&status=" + lot.status;
 }
 
 function nextPage(){
@@ -277,4 +288,8 @@ function isReady(inputs, filterOptions, startDateO, endDateO, score, code){
         }
     }
     return filterDetail;
+}
+
+function moveToNewLot(){
+    window.location.href="./newLot.html"
 }

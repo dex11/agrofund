@@ -13,11 +13,6 @@ if(filterOptions != null){
     }
 }
 
-
-function moveToNewLot(){
-    window.location.href="./newLot.html"
-}
-
 function addNewLot(){
     const inputs = document.getElementsByTagName("input");
     let filterOptions = document.getElementsByClassName("dropbtn");

@@ -1,7 +1,18 @@
-.main {
+html{
     height: 100%;
+}
+.main {
+    /* height: 100%; */
     margin: 0;
     padding: 0;
+}
+
+.back_ground{
+  background-image: url("./img/agr.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
 }
 
 .header {
@@ -217,4 +228,8 @@
 .navigation_button{
     font-size: larger;
     cursor: pointer;
+}
+
+footer{
+    bottom: 0;
 }

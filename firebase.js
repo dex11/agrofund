@@ -11,6 +11,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var auth = firebase.auth();
 var db = firebase.firestore();
+var data = [];
 
 function logIn(e){
     e.preventDefault();
@@ -62,25 +63,25 @@ function getData(){
     let first = null;
     let lastVisible = window.localStorage.getItem("nextList");
     if(lastVisible === "null"){
-        console.log("FIRST LOAD!!!");
-        first = db.collection("lots").orderBy("id").limit(2);
+        first = db.collection("lots").orderBy("id").limit(4);
     }else{
-        console.log("NOT FORST!!! " + parseInt(lastVisible));
-        // Construct a new query starting at this document,
-        // get the next 25 cities.
         first = db.collection("lots")
                 .orderBy("id")
                 .startAfter(parseInt(lastVisible))
-                .limit(2);
+                .limit(4);
     }
     return first.get().then(function (documentSnapshots) {
-    // console.log("FIRST IN A ROW >> " + documentSnapshots.docs[0].data)
-    // Get the last visible document
-    console.log(documentSnapshots.docs.length-1)
+    documentSnapshots.docs.map(snapShot =>{
+        data.push(snapShot.data());
+    });
     let lastVisibleDoc = documentSnapshots.docs[documentSnapshots.docs.length-1];
-    console.log("WTF " + lastVisibleDoc);
-    lastVisible = lastVisibleDoc.data().id;
-    console.log("last", lastVisible);
-    window.localStorage.setItem("nextList", lastVisible);
+    if(lastVisibleDoc == null || documentSnapshots.docs.length < 4){
+        let nextButton = document.getElementById("next_page_button");
+        nextButton.disabled = true;
+    }else{
+        lastVisible = lastVisibleDoc.data().id;
+        window.localStorage.setItem("nextList", lastVisible);
+    }
+    displayLots();
     });
 }
