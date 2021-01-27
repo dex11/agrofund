@@ -154,7 +154,11 @@ const data = [
 function initialRender(){
     curPage = 0;
     parseURL();
-    getData(0);
+    if(curPage == 0){
+        window.localStorage.setItem("prevList", null);
+        window.localStorage.setItem("nextList", null);
+    }
+    getData();
     let nextButton = document.getElementById("next_page_button");
     let prevButton = document.getElementById("prev_page_button");
     if(curPage*5 + 1 < 6) prevButton.disabled = true;

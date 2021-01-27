@@ -40,23 +40,24 @@ function addNewLot(){
         raised: 0,
         location: "",
     }
-    
-    let option = filterOptions[0].innerHTML;
-    newLot.product = option;
-    option = filterOptions[1].innerHTML;
-    newLot.veriety = option;
-    option = filterOptions[2].innerHTML;
-    newLot.region = option;
-
-    newLot.id = 3123123141;//პირობითად
-    newLot.start = startDateO;
-    newLot.finish = endDateO;
-    
-    newLot.score = score;
-    newLot.goal = goal;
-    option = document.getElementById("googleMapsInpt").value;
-    newLot.location = option;
-    addNewLotInDatabase(newLot);
+    db.collection('lots').get().then(snap => {
+        console.log(snap.size);
+        newLot.id = snap.size;
+        let option = filterOptions[0].innerHTML;
+        newLot.product = option;
+        option = filterOptions[1].innerHTML;
+        newLot.veriety = option;
+        option = filterOptions[2].innerHTML;
+        newLot.region = option;
+        newLot.start = startDateO;
+        newLot.finish = endDateO;
+        
+        newLot.score = score;
+        newLot.goal = goal;
+        option = document.getElementById("googleMapsInpt").value;
+        newLot.location = option;
+        addNewLotInDatabase(newLot);
+    });
 }
 
 function isReady(inputs, filterOptions, startDateO, endDateO, score, goal){

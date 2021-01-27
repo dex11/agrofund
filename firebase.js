@@ -58,21 +58,29 @@ function addNewLotInDatabase(newLot){
     });
 }
 
-function getData(startIndex){
-    var first = db.collection("lots")
-    .orderBy("id")
-    .limit(25);
-
+function getData(){
+    let first = null;
+    let lastVisible = window.localStorage.getItem("nextList");
+    if(lastVisible === "null"){
+        console.log("FIRST LOAD!!!");
+        first = db.collection("lots").orderBy("id").limit(2);
+    }else{
+        console.log("NOT FORST!!! " + parseInt(lastVisible));
+        // Construct a new query starting at this document,
+        // get the next 25 cities.
+        first = db.collection("lots")
+                .orderBy("id")
+                .startAfter(parseInt(lastVisible))
+                .limit(2);
+    }
     return first.get().then(function (documentSnapshots) {
-    console.log("SOMETHING PLEASE " + documentSnapshots.docs[0]);
-    var lastVisible = documentSnapshots.docs[documentSnapshots.docs.length-1];
+    // console.log("FIRST IN A ROW >> " + documentSnapshots.docs[0].data)
+    // Get the last visible document
+    console.log(documentSnapshots.docs.length-1)
+    let lastVisibleDoc = documentSnapshots.docs[documentSnapshots.docs.length-1];
+    console.log("WTF " + lastVisibleDoc);
+    lastVisible = lastVisibleDoc.data().id;
     console.log("last", lastVisible);
-
-    // Construct a new query starting at this document,
-    // get the next 25 cities.
-    var next = db.collection("lots")
-        .orderBy("id")
-        .startAfter(lastVisible)
-        .limit(25);
+    window.localStorage.setItem("nextList", lastVisible);
     });
 }
