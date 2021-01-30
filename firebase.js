@@ -56,12 +56,13 @@ function addNewLotInDatabase(newLot){
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
+        alert("ახალი ლოტის ჩამატებისას შეიქმნა პრობლემა. გთხოვთ ცადოთ ხელახლა!")
     });
 }
 
-function getData(){
+function getData(itm){
     let first = null;
-    let lastVisible = window.localStorage.getItem("nextList");
+    let lastVisible = itm;
     if(lastVisible === "null"){
         first = db.collection("lots").orderBy("id").limit(4);
     }else{
@@ -73,6 +74,7 @@ function getData(){
     return first.get().then(function (documentSnapshots) {
     documentSnapshots.docs.map(snapShot =>{
         data.push(snapShot.data());
+        data[data.length-1].serverId = snapShot.id;
     });
     let lastVisibleDoc = documentSnapshots.docs[documentSnapshots.docs.length-1];
     if(lastVisibleDoc == null || documentSnapshots.docs.length < 4){
@@ -83,5 +85,46 @@ function getData(){
         window.localStorage.setItem("nextList", lastVisible);
     }
     displayLots();
+    }).catch(function(error) {
+        console.error("Error updating document: ", error);
+        alert("ოპერაციის განხორციელებისას მოხდა შეცდომა! ცადეთ ხელახლა!");
     });
+}
+
+function updateLot(lotId, amount){
+    db.collection("lots").doc(lotId).update({
+        raised: amount,
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+        alert("გადახდა წარმატებით შესრულდა");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+        alert("გადახდა ვერ შესრულდა! სცადეთ ხელახლა.")
+    });
+}
+
+function getMyLots(){
+    let lots = window.localStorage.getItem("myLots");
+    if(lots.length > 0){
+        lots = lots.split(" ");
+        let hadProblem = false;
+        let dbd = db.collection("lots");
+        for(let i = 1; i < lots.length; i++){
+            let lotId = lots[i];
+            console.log(lotId);
+            dbd.doc(lotId).get().then(function(doc) {
+                if (doc.exists) {
+                    data.push(doc.data());
+                    displayLots();
+                } else {
+                    hadProblem = true;
+                }
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
+            });
+        }
+        if(hadProblem) alert("ზოგიერთი თქვენი ლოტი უკვე წაიშალა ჩვენი მონაცემთა ბაზიდან");
+    }
 }

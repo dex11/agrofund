@@ -22,6 +22,7 @@ function initializePage(){
     let secodRowEls = document.getElementsByClassName("second_row");
     lot.id = document.URL.split("id=")[1].split("&")[0];
     secodRowEls[1].innerHTML += lot.id;
+    lot.serverId = document.URL.split("serverId=")[1].split("&")[0];
     lot.goal = document.URL.split("goal=")[1].split("&")[0];
     lot.raised = document.URL.split("raised=")[1].split("&")[0];
     let progress = document.getElementById("progress");
@@ -84,28 +85,23 @@ function onCardExpChange(e){
 function onPay(e){
     let amount = document.getElementById("cashAmount").value;
     amount = parseFloat(amount);
-    let goal = parseFloat(lot.goal) - parseFloat(lot.raised);
+    let goal = parseFloat(lot.goal);
+    let progress = document.getElementById("progress");
+    amount += parseFloat(lot.raised);
     if(amount <= goal && amount > 0){
-
-        let newVal =  parseFloat(lot.raised) + amount;
-        // Set the "capital" field of the city 'DC'
-        return db.collection("lots").where("id", "==", parseInt(lot.id)).get()
-        .then(function(querySnapshot) {
-            return querySnapshot.docs[0].update({
-                raised: newVal
-            }).then(function() {
-                console.log("Document successfully updated!");
-                let progress = document.getElementById("progress");
-                progress.value = amount;
-                alert("გადახდა წარმატებით შესრულდა");
-                modal.style.display = "none";
-            })
-            .catch(function(error) {
-                console.error("Error updating document: ", error);
-            });
-        });
+        updateLot(lot.serverId, amount);
+        progress.value += amount;
+        modal.style.display = "none";
+        if(!window.localStorage.getItem("myLots").includes(lot.serverId,0)){
+            let curLots = window.localStorage.getItem("myLots") + " " + lot.serverId;
+            window.localStorage.setItem("myLots",curLots);
+        }
     }else{
         alert("მითითებული თანხა არ აკმაყოფილებს შესატან ფარგლებს");
     }
+}
+
+function moveToMyLots(e){
+    window.location.href="./myLots.html";
 }
 

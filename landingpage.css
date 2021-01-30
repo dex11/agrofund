@@ -233,3 +233,10 @@ html{
 footer{
     bottom: 0;
 }
+
+.profile_logo{
+    height: 7%;
+    position: fixed;
+    margin-top: 1%;
+    cursor: pointer;
+}

@@ -159,16 +159,16 @@ function initialRender(){
         window.localStorage.setItem("prevList", null);
         window.localStorage.setItem("nextList", null);
     }
-    getData();
+    let pageUrl = document.URL.split(".html")[0].split('/')[3];
+    if(pageUrl === "landingpage") getData(window.localStorage.getItem("nextList"));
+    if(pageUrl == "myLots") getMyLots();
 }
 
 function displayLots(){
-    console.log(data);
     let prevButton = document.getElementById("prev_page_button");
     if(curPage*5 + 1 < 6) prevButton.disabled = true;
     let container = document.getElementById("listing");
     let begin = curPage * 5;
-    console.log(begin);
     for(let i = 0; i < data.length; i++){
         let lot = data[i];
         let logoPath = "";
@@ -221,7 +221,7 @@ function parseURL(){
 function lotDetailed(e){
     let index = e.target.id.split('_')[1];
     let lot = data[index];
-    window.location.href="lotDetail.html?id=" + lot.id +
+    window.location.href="lotDetail.html?id=" + lot.id + "&serverId=" +lot.serverId +
     "&raised=" + lot.raised + "&goal=" + lot.goal + "&location="
     +lot.location + "&product=" + lot.product + "&veriety="
     +lot.veriety + "&region=" + lot.region + "&start="+
@@ -292,4 +292,8 @@ function isReady(inputs, filterOptions, startDateO, endDateO, score, code){
 
 function moveToNewLot(){
     window.location.href="./newLot.html"
+}
+
+function moveToMyLots(e){
+    window.location.href="./myLots.html";
 }
