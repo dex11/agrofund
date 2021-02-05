@@ -2,7 +2,9 @@ html{
     height: 100%;
 }
 .main{
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -18,7 +20,18 @@ html{
   }
 .header{
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+label{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+
 
 .add_new_lot_button{
     padding: 1% 0 1% 0 ;
@@ -30,6 +43,16 @@ html{
     justify-content: center;
 }
 
+.upper_row, .bottom_row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .bottom_row:nth-child(2){
+    padding: 0 5% 0 1%;
+} */
+
 @media only screen and (max-width: 750px) {
     .upper_row, .bottom_row{
         display: flex;
@@ -38,5 +61,22 @@ html{
     .bottom_row > input{
         margin: 1% 0 1% 0;
         width: 35%;
+    }
+
+    .header{
+        flex-direction: column;
+    }
+
+    .header  *{
+        width: 100%;
+    }
+
+    input{
+        margin: 1% !important;
+        width: 100% !important;
+    }
+    label>input{
+        /* width: auto !important; */
+        height: 30 !important;
     }
 }

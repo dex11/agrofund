@@ -1,5 +1,6 @@
 html{
     height: 100%;
+    width: 100%;
 }
 .landing_main{
     display: flex;
@@ -45,6 +46,11 @@ button{
     cursor: pointer;
 }
 
+@media only screen and (max-width: 750px) {
+    button, p, input, a{
+        font-size: xx-large;
+    }
+}
 
 
 

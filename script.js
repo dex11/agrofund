@@ -17,140 +17,6 @@ if(filterOptions != null){
     }
 }
 
-//listing 
-// const data = [
-//     {
-//         id: '001',
-//         product: 'ხორბალი',
-//         veriety: 'ჯიშიანი',
-//         region: 'კახეთი',
-//         status: false,
-//         start: '01/01/2021',
-//         finish: '02/02/2021',
-//         score: '32',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '002',
-//         product: 'მზესუმზირა',
-//         veriety: 'უჯიშო',
-//         region: 'ქართლი',
-//         status: true,
-//         start: '02/01/2021',
-//         finish: '02/03/2021',
-//         score: '52',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '003',
-//         product: 'ხორბალი',
-//         veriety: 'ჯიშიანი',
-//         region: 'ქართლი',
-//         status: true,
-//         start: '05/01/2021',
-//         finish: '02/11/2021',
-//         score: '22',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '004',
-//         product: 'ხორბალი',
-//         veriety: 'ჯიშიანი',
-//         region: 'ქართლი',
-//         status: true,
-//         start: '05/01/2021',
-//         finish: '02/10/2021',
-//         score: '12',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '005',
-//         product: 'მზესუმზირა',
-//         veriety: 'ჯიშიანი',
-//         region: 'ქართლი',
-//         status: true,
-//         start: '05/01/2021',
-//         finish: '02/09/2021',
-//         score: '22',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '006',
-//         product: 'ხორბალი',
-//         veriety: 'უჯიშო',
-//         region: 'ქართლი',
-//         status: true,
-//         start: '05/01/2021',
-//         finish: '02/08/2021',
-//         score: '32',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '007',
-//         product: 'მზესუმზირა',
-//         veriety: 'ჯიშიანი',
-//         region: 'კახეთი',
-//         status: true,
-//         start: '05/01/2021',
-//         finish: '02/07/2021',
-//         score: '42',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '008',
-//         product: 'ხორბალი',
-//         veriety: 'ჯიშიანი',
-//         region: 'ქართლი',
-//         status: true,
-//         start: '05/01/2021',
-//         finish: '02/06/2021',
-//         score: '27',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '009',
-//         product: 'მზესუმზირა',
-//         veriety: 'უჯიშო',
-//         region: 'კახეთი',
-//         status: true,
-//         start: '05/01/2021',
-//         finish: '02/05/2021',
-//         score: '65',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-//     {
-//         id: '010',
-//         product: 'ხორბალი',
-//         veriety: 'უჯიშო',
-//         region: 'ქართლი',
-//         status: true,
-//         start: '05/01/2021',
-//         finish: '02/04/2021',
-//         score: '05',
-//         goal: 15000,
-//         raised: 4500,
-//         location: "https://www.google.com/maps/place/Sokhumi/@43.0182038,40.9354334,12z/data=!3m1!4b1!4m5!3m4!1s0x405f220f44f90b7d:0xe01a1045ea63bc8a!8m2!3d43.0015252!4d41.0234153",
-//     },
-// ];
-
 function initialRender(){
     data = [];
     curPage = 0;
@@ -160,7 +26,7 @@ function initialRender(){
         window.localStorage.setItem("nextList", null);
     }
     let pageUrl = document.URL.split(".html")[0].split('/')[3];
-    if(pageUrl === "landingpage") getData(window.localStorage.getItem("nextList"));
+    if(pageUrl === "landingpage" || pageUrl === "adminPanel") getData(window.localStorage.getItem("nextList"));
     if(pageUrl == "myLots") getMyLots();
 }
 
@@ -221,7 +87,9 @@ function parseURL(){
 function lotDetailed(e){
     let index = e.target.id.split('_')[1];
     let lot = data[index];
-    window.location.href="lotDetail.html?id=" + lot.id + "&serverId=" +lot.serverId +
+    let startUrl = "lotDetail.html";
+    if(document.getElementsByClassName("filter_button").length == 2) startUrl = "adminLotDetail.html";
+    window.location.href= startUrl + "?id=" + lot.id + "&serverId=" +lot.serverId +
     "&raised=" + lot.raised + "&goal=" + lot.goal + "&location="
     +lot.location + "&product=" + lot.product + "&veriety="
     +lot.veriety + "&region=" + lot.region + "&start="+
@@ -231,6 +99,10 @@ function lotDetailed(e){
 
 function nextPage(){
     window.location.href = './landingpage.html?page=' + curPage + filterD;
+}
+
+function nextPageAdmin(){
+    window.location.href = './adminPanel.html?page=' + curPage + filterD;
 }
 
 function prevPage(){
@@ -296,4 +168,16 @@ function moveToNewLot(){
 
 function moveToMyLots(e){
     window.location.href="./myLots.html";
+}
+
+function onFilterClicked(e){
+    let elem = document.getElementsByClassName("header")[0];
+    if(e.target.innerHTML === "დახურვა"){
+        elem.style.display="none";
+        e.target.innerHTML = "გასაფილტრად დააჭირეთ აქ";
+    }else{
+        elem.style.display="flex";
+        elem.style.flexDirection = "column";
+        e.target.innerHTML = "დახურვა"
+    }
 }

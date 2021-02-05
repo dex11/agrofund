@@ -151,6 +151,7 @@ html{
         margin: 0 3% 0 3%;
         width: 65%;
     }
+   
 }
 
 /* listing */
@@ -194,6 +195,11 @@ html{
     cursor: pointer;
 }
 
+#showFilter{
+    display: none;
+}
+
+
 @media only screen and (max-width: 750px) {
     .lot_container{
         flex-direction: column;
@@ -215,8 +221,33 @@ html{
     .lot_img{
         height: 7vh;
     }
-}
 
+    .profile_logo{
+        bottom: 0;
+    }
+    .header{
+        display: none;
+    }
+    .header>div{
+        flex-direction: column;
+    }
+    .header input{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 1%;
+    }
+    #showFilter{
+        display: flex;
+        width: 80%;
+        margin: 0.5% 0 0.5% 10%;
+        align-items: center;
+        justify-content: center;
+        font-size: large;
+    }
+    a,p,button,input{
+        font-size: large;
+    }
+}
 /* footer */
 #footer{
     width: 80%;

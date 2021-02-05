@@ -1,0 +1,57 @@
+<html>
+<link rel="stylesheet" href="landingpage.css">
+<link rel="stylesheet" href="lotDetail.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body class="main" onload="initializePage()">
+    <img src="./img/agr.jpg" class="background" />
+    <div class="info_container">
+        <div class='lot_container' >
+            <img class='lot_img'  src=''/>
+            <div class='lot_desc' >
+                <div>
+                    <p class="first_row"> კულტურა: </p>
+                    <p class="first_row"> ჯიში: </p>
+                    <p class="first_row"> რეგიონი: </p>
+                    <p class="first_row"> ვადები: </p>
+                </div>
+
+                <div>
+                    <p class="second_row"> ქულა: </p>
+                    <p class="second_row"> ID: </p>
+                    <a class="second_row"> მდებარეობა</a>
+                </div>
+            </div>
+        </div>
+        <div class='lot_container'>
+            <p id="curCash"></p>
+            <p id="goalCash"></p>
+            <progress id="progress" value="4500" max="15000"> 32% </progress>
+            <button id ="investBtn" onclick="invest()">ინვესტირება</button>
+        </div>
+    </div>
+
+    <div id="popUp" class="pop_up_container">
+        <div class="pop_up">
+            <span class="close" onclick="closeInvestPopUp()">&times;</span>
+            <div class="payment_method_container">
+                <p>ანგარიშის ნომერი</p>
+                <input type="text" class="card_inpt" id="cardNum" placeholder="შეიყვანეთ ვალიდური ნომერი" onkeyup="onCardNumberChange(event)"/>
+                <div class="exp_CVC">
+                    <input type='text' class="card_inpt" id="cardExp" placeholder="MM/YY" onkeyup="onCardExpChange(event)"/>
+                    <input type='number' class="card_inpt" id="cardCVC" placeholder="CVC"/>
+                </div>
+                <input type="number" class="card_inpt" id="cashAmount" placeholder="თანხა"/>
+                <button id="payBtn" onclick="onPay()">გადახდა</button>
+            </div>
+        </div>
+      
+      </div>
+</body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+<script src="./firebase.js" type="text/javascript"></script>
+<script src="./lotDetail.js" type="text/javascript"></script>
+</html>
