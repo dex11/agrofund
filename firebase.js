@@ -105,6 +105,18 @@ function updateLot(lotId, amount){
     });
 }
 
+function updateObject(lotId, obj){
+    db.collection("lots").doc(lotId).update(obj)
+    .then(function() {
+        console.log("Document successfully written!");
+        alert("ოპერაცია წარმატებით შესრულდა");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+        alert("ოპერაციის შესრულებისას იყო შეცდომა")
+    });
+}
+
 function getMyLots(){
     let lots = window.localStorage.getItem("myLots");
     if(lots.length > 0){

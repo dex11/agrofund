@@ -9,24 +9,57 @@
             <img class='lot_img'  src=''/>
             <div class='lot_desc' >
                 <div>
-                    <p class="first_row"> კულტურა: </p>
-                    <p class="first_row"> ჯიში: </p>
-                    <p class="first_row"> რეგიონი: </p>
-                    <p class="first_row"> ვადები: </p>
+                    <div class="option">
+                        <p>კულტურა: </p>
+                        <div class="dropdown">
+                            <button class="first_row"></button>
+                            <div class="dropdown-content">
+                                <a class="dropdown_option">ხორბალი</a>
+                                <a class="dropdown_option">მზესუმზირა</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <p>ჯიში: </p>
+                        <div class="dropdown">
+                            <button  class="first_row"></button>
+                            <div class="dropdown-content">
+                                <a class="dropdown_option">ჯიშიანი</a>
+                                <a class="dropdown_option">უჯიშო</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <p >რეგიონი: </p>
+                        <div class="dropdown">
+                            <button class="first_row"></button>
+                            <div class="dropdown-content">
+                                <a class="dropdown_option">ქართლი</a>
+                                <a class="dropdown_option">კახეთი</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="first_row">ვადები: </p>
                 </div>
 
                 <div>
-                    <p class="second_row"> ქულა: </p>
-                    <p class="second_row"> ID: </p>
-                    <a class="second_row"> მდებარეობა</a>
+                    <p> ქულა: </p>
+                    <input class="second_row" type="number"/>
+                    <p > ID: </p>
+                    <input class="second_row" type="number"/>
+                    <p> მდებარეობა</p>
+                    <input class="second_row"/>
                 </div>
             </div>
         </div>
         <div class='lot_container'>
             <p id="curCash"></p>
-            <p id="goalCash"></p>
+            <div class="option">
+                <p>შეგროვებული თანხა: </p>
+                <input id="goalCash" type="number"/>
+            </div>
             <progress id="progress" value="4500" max="15000"> 32% </progress>
-            <button id ="investBtn" onclick="invest()">ინვესტირება</button>
+            <button id ="investBtn" onclick="change()">ცვლილების შენახვა</button>
         </div>
     </div>
 
@@ -53,5 +86,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 <script src="./firebase.js" type="text/javascript"></script>
+<script src="./script.js" type="text/javascript"></script>
 <script src="./lotDetail.js" type="text/javascript"></script>
 </html>

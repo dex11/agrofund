@@ -21,7 +21,7 @@ function initializePage(){
     let firstRowEls = document.getElementsByClassName("first_row");
     let secodRowEls = document.getElementsByClassName("second_row");
     lot.id = document.URL.split("id=")[1].split("&")[0];
-    secodRowEls[1].innerHTML += lot.id;
+    secodRowEls[1].value = lot.id;
     lot.serverId = document.URL.split("serverId=")[1].split("&")[0];
     lot.goal = document.URL.split("goal=")[1].split("&")[0];
     lot.raised = document.URL.split("raised=")[1].split("&")[0];
@@ -29,12 +29,12 @@ function initializePage(){
     progress.value = parseFloat(lot.raised);
     progress.max =  parseFloat(lot.goal);
     lot.location = document.URL.split("location=")[1].split("&")[0];
-    secodRowEls[2].href = lot.location;
+    secodRowEls[2].value = lot.location;
     lot.start = document.URL.split("start=")[1].split("&")[0];
     lot.finish = document.URL.split("finish=")[1].split("&")[0];
     firstRowEls[3].innerHTML += lot.start + " >>" + lot.finish;
     lot.score = document.URL.split("score=")[1].split("&")[0];
-    secodRowEls[0].innerHTML += lot.score;
+    secodRowEls[0].value = lot.score;
     lot.veriety = decodeURI(document.URL).split("veriety=")[1].split("&")[0];
     firstRowEls[1].innerHTML += lot.veriety;
     lot.product = decodeURI(document.URL).split("product=")[1].split("&")[0];
@@ -42,7 +42,7 @@ function initializePage(){
     lot.region = decodeURI(document.URL).split("region=")[1].split("&")[0];
     firstRowEls[2].innerHTML += lot.region;
     investBtn.disabled = (new Date() > new Date(lot.finish));
-    document.getElementById("goalCash").innerHTML = "სამიზნე თანხა: " + lot.goal;
+    document.getElementById("goalCash").value = lot.goal;
     let logoPath = "";
     if(lot.product === "ხორბალი") logoPath = "./img/wheat.jpg";
     else logoPath = "./img/sunflower.jpg";
@@ -56,6 +56,19 @@ function setCurCash(){
 
 function invest(){
     modal.style.display = "block";
+}
+
+function change(){
+    let secodRowEls = document.getElementsByClassName("second_row");
+    lot.goal =document.getElementById("goalCash").value;
+    lot.id =secodRowEls[1].value;
+    lot.score = secodRowEls[0].value;
+    lot.location = secodRowEls[2].value;
+    if(lot.goal.length == 0 || lot.id.length == 0 || lot.score.length == 0 || lot.location.length == 0){
+        alert("შეავსეთ ყველა ველი")
+    }else{
+        updateObject(lot.serverId, lot);
+    }
 }
 
 function closeInvestPopUp(){
