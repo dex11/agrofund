@@ -92,4 +92,7 @@ color: #000;
     .option{
         flex-direction: column;
     }
+    .info_container{
+        height: auto;
+    }
 }
