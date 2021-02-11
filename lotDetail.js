@@ -100,8 +100,7 @@ function onPay(e){
     amount = parseFloat(amount);
     let goal = parseFloat(lot.goal);
     let progress = document.getElementById("progress");
-    amount += parseFloat(lot.raised);
-    if(amount <= goal && amount > 0){
+    if(amount + parseFloat(lot.raised) <= goal && amount > 0){
         updateLot(lot.serverId, amount);
         progress.value += amount;
         modal.style.display = "none";
