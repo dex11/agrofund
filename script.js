@@ -26,7 +26,7 @@ function initialRender(){
         window.localStorage.setItem("nextList", null);
     }
     let pageUrl = document.URL.split(".html")[0].split('/')[3];
-    if(pageUrl === "landingpage" || pageUrl === "adminPanel") getData(window.localStorage.getItem("nextList"));
+    if(pageUrl === "landingpage" || pageUrl === "adminpanel") getData(window.localStorage.getItem("nextList"));
     if(pageUrl == "mylots") getMyLots();
 }
 

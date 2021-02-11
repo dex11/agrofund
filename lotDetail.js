@@ -101,8 +101,9 @@ function onPay(e){
     let goal = parseFloat(lot.goal);
     let progress = document.getElementById("progress");
     if(amount + parseFloat(lot.raised) <= goal && amount > 0){
-        updateLot(lot.serverId, amount);
+        updateLot(lot.serverId, (amount + parseFloat(lot.raised)) );
         progress.value += amount;
+        document.getElementById("curCash").innerHTML = progress.value;
         modal.style.display = "none";
         if(!window.localStorage.getItem("myLots").includes(lot.serverId,0)){
             let curLots = window.localStorage.getItem("myLots") + " " + lot.serverId;
