@@ -119,6 +119,7 @@ function updateObject(lotId, obj){
 
 function getMyLots(){
     let lots = window.localStorage.getItem("myLots");
+    console.log(lots);
     if(lots.length > 0){
         lots = lots.split(" ");
         let hadProblem = false;
