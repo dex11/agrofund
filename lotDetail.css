@@ -1,5 +1,5 @@
-.main{
-/* padding: 0 10% 0 10%; */
+.html{
+ height: 100%;
 }
 
 .info_container{
@@ -85,5 +85,11 @@ color: #000;
 @media only screen and (max-width: 750px) {
     p{
         font-size: large;
+    }
+    .lot_desc{
+        flex-direction: column;
+    }
+    .option{
+        flex-direction: column;
     }
 }
