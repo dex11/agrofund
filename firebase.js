@@ -1,11 +1,11 @@
 
 var firebaseConfig = {
-    apiKey: "AIzaSyCIcSYNe5rqRj2cAF5gwz-vnuabON4l1Qw",
-    authDomain: "agrofund-c6f2f.firebaseapp.com",
-    projectId: "agrofund-c6f2f",
-    storageBucket: "agrofund-c6f2f.appspot.com",
-    messagingSenderId: "416361320904",
-    appId: "1:416361320904:web:f5e1dd9f11d892717730fd"
+    apiKey: "AIzaSyCIK2F0MXFXlY9bQcaHtl5wYwsOwDVhH7g",
+    authDomain: "agrofund-38aa3.firebaseapp.com",
+    projectId: "agrofund-38aa3",
+    storageBucket: "agrofund-38aa3.appspot.com",
+    messagingSenderId: "457820618036",
+    appId: "1:457820618036:web:f18d6828a0d18e3f9ab961"
   };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
